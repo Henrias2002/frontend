@@ -1,0 +1,170 @@
+:root{
+    --colo1:rgb(41, 153, 245);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f8f8f8;
+    font-family: 'Poppins', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+.side-content{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    width: 200px;
+    position: absolute;
+    height: 100%;
+    transition: 300ms ease-out;
+    transform: translateX(-200px);
+
+    
+}
+
+.side-content h1{
+    pointer-events: none;
+    text-align: center;
+    font-weight: 600;
+    color: rgb(41, 153, 245);
+    margin-bottom: 15px;
+    
+}
+
+.side-content ul li{
+    list-style: none;
+    width: 100%;
+  
+}
+
+.side-content ul{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-start;
+
+    height: 65%;
+}
+
+.side-content ul a{
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 30px;
+    color: rgb(61, 60, 60);
+    transform: translateX(15px);
+    transition: 300ms ease-out;
+  
+
+}
+
+.side-content ul li:hover{
+    background-color: var(--colo1);
+    color: #fff;
+}
+
+.side-content ul a:hover{
+
+    color: #fff;
+    letter-spacing: 0.1rem;
+}
+
+    
+
+
+.side-bar .toggle{
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 10px;
+    left:15px;
+    z-index: 1;
+    border-radius: 2px;
+    
+}
+
+input:hover{
+    cursor: pointer;
+}
+
+.side-bar .toggle .common{
+    width: 25px;
+    height: 2px;
+    background-color: var(--colo1);
+    position: absolute;
+}
+
+.side-bar .toggle .top-line{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition:300ms ease-out
+}
+
+.side-bar .toggle .middle-line{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition:300ms ease-out
+
+}
+
+.side-bar .toggle .bottom-line{
+    top: 70%;
+    left: 50%;
+    transform: translatex(-50%);
+    transition:300ms ease-out
+}
+
+
+
+
+.side-bar input{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border: none;
+    top: 10px;
+    left:15px;
+    z-index: 2;
+    --webkit-appearnce:none;
+    opacity: 0;
+}
+
+
+input:checked ~ .toggle .top-line{
+    top:12px;
+    left: 2px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+
+input:checked ~ .toggle .bottom-line{
+    top:12px;
+    left: 2px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+
+input:checked ~ .toggle .middle-line{
+ 
+    opacity: 0;
+    transform: translateX(25px);
+}
+
+
+input:checked ~ .side-content{
+    transform: translateX(0);
+    
+}
+
