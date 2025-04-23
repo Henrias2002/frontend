@@ -51,7 +51,7 @@ button{
     backdrop-filter: blur(5px);
     z-index: 10;
     display: none;
-
+    transition: all 300ms ease-in-out;
 }
 
 .popup{
@@ -66,10 +66,10 @@ button{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    transition: all 200ms;
+    transition: all 200ms ease-in-out;
 }
 
-.popup-title{
+.popup-title,.title{
     text-align: center;
     text-transform: uppercase;
 }
@@ -92,5 +92,10 @@ button{
     position: absolute;
     bottom: 5px;
     right: 15px;
+}
+
+.show{
+    display: block;
+
 }
 
