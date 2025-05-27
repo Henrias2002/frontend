@@ -1,0 +1,62 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+.glowing{
+    padding:10px;
+    background-color: black;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+    position: relative;
+    animation: glow-effect 3.5s
+    linear infinite reverse;
+}
+
+.glowing::after{
+    --angle:0deg;
+    content: '';
+    position: absolute;
+    border-radius: 9999px;
+    inset: -1px;
+    background-image: conic-gradient(from var(--angle), rgb(153, 0, 255) 20deg, rgb(0, 81, 255) 120deg, rgb(85, 202, 7) 200deg, rgb(255, 0, 255) 300deg, rgb(195, 0, 255) 400deg);
+    border-radius: 5px;
+    transition: all 400ms ease-in-out;
+    z-index:-1;
+    animation: move-grandient 3.5s
+    linear infinite;
+}
+
+
+
+
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes move-grandient{
+    0%{
+        --angle:0deg;
+    }
+    100%{
+        --angle:360deg;
+    }
+}
+
+@keyframes glow-effect{
+    0%{
+        box-shadow: 0 0 10px rgba(153, 0, 255, 0.5), 0 0 20px rgba(153, 0, 255, 0.5), 0 0 30px rgba(153, 0, 255, 0.5);
+    }
+    100%{
+        box-shadow:  0 0 40px rgba(153, 0, 255, 0.5),  0 0 80px rgba(153, 0, 255, 0.5),  0 0 160px rgba(153, 0, 255, 0.5);
+    }
+}
